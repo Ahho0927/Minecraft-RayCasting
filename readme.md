@@ -1,5 +1,5 @@
 <h1 align="center"> RayCasting </h1>
-<p>A datapack to get ray-casting collision position</p>
+<p align="center">A datapack to get ray-casting collision position</p>
 
 ## 개요
 ㄹㅇ 이보다 완벽할 수가 없다 진짜
