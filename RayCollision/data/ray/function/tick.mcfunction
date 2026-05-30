@@ -1,0 +1,1 @@
+execute as @a at @s if items entity @s weapon.mainhand stick[custom_data={rayCaster: 1b}] anchored eyes positioned ^ ^ ^ run function ray:caster/main

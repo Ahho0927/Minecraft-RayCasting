@@ -1,0 +1,1 @@
+$execute unless block $(x) $(y) $(z) minecraft:air run scoreboard players set @s ray.collapsed 1

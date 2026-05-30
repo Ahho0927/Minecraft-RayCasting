@@ -1,0 +1,1 @@
+$particle small_flame ~$(x) ~$(y) ~$(z) 0 0 0 0 0

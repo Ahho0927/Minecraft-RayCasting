@@ -1,0 +1,1 @@
+give @s stick[custom_data={rayCaster: 1b}, custom_name={"text":"Ray Caster","color":"gold","italic":false}] 1
