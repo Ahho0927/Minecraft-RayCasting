@@ -1,13 +1,19 @@
-<h1 align="center"> RayCast-Collision </h1>
-
+<h1 align="center"> RayCasting </h1>
+<p>A datapack to get ray-casting collision position</p>
 ## 개요
 ㄹㅇ 이보다 완벽할 수가 없다 진짜
+
+## 사용방법
+RayCast용 툴을 사용하여 시각화할 수 있다.
+```mcfunction
+function ray:get_tool
+```
 
 ## 원리
 
 ![](./doc/compare.jpg)
 
-기존 Bresenham의 한계를 극복한 3D Supercover DDA 알고리즘 중 하나인 정수연산기반 Amanatides & Woo의 방식을 사용하였다.\
+기존 Bresenham의 한계를 극복한 3D Supercover DDA 알고리즘 중 하나인 정수연산기반 Amanatides & Woo의 방식을 사용하였다.
 
 ```
 # -- basic functions --
