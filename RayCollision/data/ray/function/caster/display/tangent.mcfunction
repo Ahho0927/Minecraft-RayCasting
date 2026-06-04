@@ -1,0 +1,1 @@
+$function ray:caster/display/tangent_$(tangent) with storage ray data.visited[-1].c

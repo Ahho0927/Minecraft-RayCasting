@@ -21,7 +21,7 @@ scoreboard players operation @s ray.dy -= @s ray.oy
 scoreboard players operation @s ray.dz -= @s ray.oz
 
 # get eX(distance to next boundary plane) & step
-execute if score @s ray.dx matches 1.. run function ray:caster/d/dx_minus
+execute if score @s ray.dx matches 1.. run function ray:caster/d/dx_plus
 execute if score @s ray.dx matches ..-1 run function ray:caster/d/dx_minus
 execute if score @s ray.dx matches 0 run function ray:caster/d/dx_zero
 execute if score @s ray.dy matches 1.. run function ray:caster/d/dy_plus
@@ -82,19 +82,19 @@ execute if score @s ray.collapsed matches 0 run function ray:caster/get_next_blo
 
 # # debug
 # tellraw @s ["\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", \
-#     "visited: ", {"storage": "ray", "nbt": "data.visited[0]"}, "\n", \
-#     "visited: ", {"storage": "ray", "nbt": "data.visited[1]"}, "\n", \
-#     "visited: ", {"storage": "ray", "nbt": "data.visited[2]"}, "\n", \
-#     "visited: ", {"storage": "ray", "nbt": "data.visited[3]"}, "\n", \
-#     "visited: ", {"storage": "ray", "nbt": "data.visited[4]"}, "\n", \
-#     "visited: ", {"storage": "ray", "nbt": "data.visited[5]"}, "\n", \
-#     "visited: ", {"storage": "ray", "nbt": "data.visited[6]"}, "\n", \
-#     "visited: ", {"storage": "ray", "nbt": "data.visited[7]"}, "\n", \
-#     "visited: ", {"storage": "ray", "nbt": "data.visited[8]"}, "\n", \
-#     "visited: ", {"storage": "ray", "nbt": "data.visited[9]"}, "\n", \
+#     "visited: ", {"storage": "ray", "nbt": "data.visited[0].tangent"}, "\n", \
+#     "visited: ", {"storage": "ray", "nbt": "data.visited[1].tangent"}, "\n", \
+#     "visited: ", {"storage": "ray", "nbt": "data.visited[2].tangent"}, "\n", \
+#     "visited: ", {"storage": "ray", "nbt": "data.visited[3].tangent"}, "\n", \
+#     "visited: ", {"storage": "ray", "nbt": "data.visited[4].tangent"}, "\n", \
+#     "visited: ", {"storage": "ray", "nbt": "data.visited[5].tangent"}, "\n", \
+#     "visited: ", {"storage": "ray", "nbt": "data.visited[6].tangent"}, "\n", \
+#     "visited: ", {"storage": "ray", "nbt": "data.visited[7].tangent"}, "\n", \
+#     "visited: ", {"storage": "ray", "nbt": "data.visited[8].tangent"}, "\n", \
+#     "visited: ", {"storage": "ray", "nbt": "data.visited[9].tangent"}, "\n", \
 # ]
 
 
-execute if score @s ray.collapsed matches 1 run function ray:caster/display_block with storage ray data.visited[-1].b
-
-execute if score @s ray.collapsed matches 1 run function ray:caster/display_point with storage ray data.visited[-1].c
+# execute if score @s ray.collapsed matches 1 run function ray:caster/display/block with storage ray data.visited[-1].b
+# execute if score @s ray.collapsed matches 1 run function ray:caster/display/point with storage ray data.visited[-1].c
+execute if score @s ray.collapsed matches 1 run function ray:caster/display/tangent with storage ray data.visited[-1]

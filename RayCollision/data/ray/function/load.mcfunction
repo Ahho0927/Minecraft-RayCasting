@@ -55,4 +55,6 @@ scoreboard objectives add const dummy
 scoreboard players set 1000 const 1000
 scoreboard players set -1 const -1
 
+scoreboard objectives add ray.moved_direction dummy
+
 data merge storage ray {data: {visited: []}}

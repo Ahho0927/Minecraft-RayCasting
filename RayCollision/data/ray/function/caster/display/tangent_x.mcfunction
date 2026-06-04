@@ -1,0 +1,1 @@
+$summon minecraft:block_display ~$(x) ~$(y) ~$(z) {Tags: ["ray.display", "init"], block_state: {Name: "minecraft:white_stained_glass"}, brightness: {block: 15, sky: 15}, transformation: {left_rotation: [0f, 0f, 0f, 1f], right_rotation: [0f, 0f, 0f, 1f], translation: [-0.025f, -0.25f, -0.25f], scale: [0.05f, 0.5f, 0.5f]}}

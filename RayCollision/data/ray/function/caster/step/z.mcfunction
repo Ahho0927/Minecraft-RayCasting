@@ -13,3 +13,5 @@ scoreboard players operation @s ray.bz += @s ray.stepZ
 scoreboard players operation @s ray.abs_eZ += 1000 const
 scoreboard players operation @s ray.eZ = @s ray.abs_eZ
 scoreboard players operation @s ray.eZ *= @s ray.stepZ
+
+scoreboard players set @s ray.moved_direction 3
