@@ -21,9 +21,9 @@ scoreboard players operation @s ray.cmpZX = @s ray.eZdX
 scoreboard players operation @s ray.cmpZX -= @s ray.eXdZ
 
 # compare which boundary is the closest one
-execute unless score @s ray.stepX matches 0 if score @s ray.cmpXY matches ..-1 if score @s ray.cmpZX matches 1.. run function ray:caster/step_x
-execute unless score @s ray.stepY matches 0 if score @s ray.cmpYZ matches ..-1 if score @s ray.cmpXY matches 1.. run function ray:caster/step_y
-execute unless score @s ray.stepZ matches 0 if score @s ray.cmpZX matches ..-1 if score @s ray.cmpYZ matches 1.. run function ray:caster/step_z
+execute unless score @s ray.stepX matches 0 if score @s ray.cmpXY matches ..-1 if score @s ray.cmpZX matches 1.. run function ray:caster/step/x
+execute unless score @s ray.stepY matches 0 if score @s ray.cmpYZ matches ..-1 if score @s ray.cmpXY matches 1.. run function ray:caster/step/y
+execute unless score @s ray.stepZ matches 0 if score @s ray.cmpZX matches ..-1 if score @s ray.cmpYZ matches 1.. run function ray:caster/step/z
 
 # # debug
 # tellraw @s ["", \
@@ -48,3 +48,4 @@ execute store result storage ray data.visited[-1].c.y float 0.001 run scoreboard
 execute store result storage ray data.visited[-1].c.z float 0.001 run scoreboard players get @s ray.cZ
 
 function ray:caster/check_block with storage ray data.visited[-1].b
+function ray:caster/display/block with storage ray data.visited[-1].b

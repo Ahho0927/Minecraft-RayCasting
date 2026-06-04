@@ -21,15 +21,15 @@ scoreboard players operation @s ray.dy -= @s ray.oy
 scoreboard players operation @s ray.dz -= @s ray.oz
 
 # get eX(distance to next boundary plane) & step
-execute if score @s ray.dx matches 1.. run function ray:caster/dx_plus
-execute if score @s ray.dx matches ..-1 run function ray:caster/dx_minus
-execute if score @s ray.dx matches 0 run function ray:caster/dx_zero
-execute if score @s ray.dy matches 1.. run function ray:caster/dy_plus
-execute if score @s ray.dy matches ..-1 run function ray:caster/dy_minus
-execute if score @s ray.dy matches 0 run function ray:caster/dy_zero
-execute if score @s ray.dz matches 1.. run function ray:caster/dz_plus
-execute if score @s ray.dz matches ..-1 run function ray:caster/dz_minus
-execute if score @s ray.dz matches 0 run function ray:caster/dz_zero
+execute if score @s ray.dx matches 1.. run function ray:caster/d/dx_minus
+execute if score @s ray.dx matches ..-1 run function ray:caster/d/dx_minus
+execute if score @s ray.dx matches 0 run function ray:caster/d/dx_zero
+execute if score @s ray.dy matches 1.. run function ray:caster/d/dy_plus
+execute if score @s ray.dy matches ..-1 run function ray:caster/d/dy_minus
+execute if score @s ray.dy matches 0 run function ray:caster/d/dy_zero
+execute if score @s ray.dz matches 1.. run function ray:caster/d/dz_plus
+execute if score @s ray.dz matches ..-1 run function ray:caster/d/dz_minus
+execute if score @s ray.dz matches 0 run function ray:caster/d/dz_zero
 
 # get absolute values
 scoreboard players operation @s ray.abs_eX = @s ray.eX
@@ -57,8 +57,6 @@ execute if score @s ray.abs_dz matches ..-1 run scoreboard players operation @s 
 #     ", ", {"score": {"name": "@s", "objective": "ray.stepY"}}, \
 #     ", ", {"score": {"name": "@s", "objective": "ray.stepZ"}}, ") ", \
 # ]
-kill @e[type=block_display, tag=ray.display, tag=!init]
-tag @e[tag=ray.display, tag=init] remove init
 
 # initialize loop
 scoreboard players set @s ray.cmpXY 0
@@ -67,6 +65,10 @@ scoreboard players set @s ray.cmpZX 0
 data merge storage ray {data: {visited: []}}
 
 scoreboard players set @s ray.collapsed 0
+execute if score @s ray.collapsed matches 0 run function ray:caster/get_next_block
+execute if score @s ray.collapsed matches 0 run function ray:caster/get_next_block
+execute if score @s ray.collapsed matches 0 run function ray:caster/get_next_block
+execute if score @s ray.collapsed matches 0 run function ray:caster/get_next_block
 execute if score @s ray.collapsed matches 0 run function ray:caster/get_next_block
 execute if score @s ray.collapsed matches 0 run function ray:caster/get_next_block
 execute if score @s ray.collapsed matches 0 run function ray:caster/get_next_block
@@ -92,4 +94,7 @@ execute if score @s ray.collapsed matches 0 run function ray:caster/get_next_blo
 #     "visited: ", {"storage": "ray", "nbt": "data.visited[9]"}, "\n", \
 # ]
 
-execute if score @s ray.collapsed matches 1 run function ray:caster/display with storage ray data.visited[-1].c
+
+execute if score @s ray.collapsed matches 1 run function ray:caster/display_block with storage ray data.visited[-1].b
+
+execute if score @s ray.collapsed matches 1 run function ray:caster/display_point with storage ray data.visited[-1].c

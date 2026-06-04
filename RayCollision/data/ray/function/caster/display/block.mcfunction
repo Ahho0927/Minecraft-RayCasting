@@ -1,0 +1,1 @@
+$execute positioned $(x) $(y) $(z) align xyz run summon minecraft:block_display ~ ~ ~ {Tags: ["ray.display", "init"], block_state: {Name: "minecraft:white_stained_glass"}, brightness: {block: 15, sky: 15}, transformation: {left_rotation: [0f, 0f, 0f, 1f], right_rotation: [0f, 0f, 0f, 1f], translation: [-0.005f, -0.005f, -0.005f],scale: [1.01f, 1.01f, 1.01f]}}
