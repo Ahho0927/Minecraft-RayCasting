@@ -2,7 +2,8 @@
 <p align="center">A datapack to get ray-casting collision position</p>
 
 ## 개요
-ㄹㅇ 이보다 완벽할 수가 없다 진짜
+
+<video src="/doc/RayCasting_test.mp4" controls="true" width="600"></video>
 
 ## 사용방법
 RayCast용 툴을 사용하여 시각화할 수 있다.
