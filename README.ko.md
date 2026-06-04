@@ -1,21 +1,31 @@
 <h1 align="center"> RayCasting </h1>
-<p align="center">A datapack to get ray-casting collision position</p>
+<p align="center">레이캐스팅 충돌 위치 검출을 위한 실험적 데이터팩</p>
+
+<!-- <p align="center">
+  <a href="README.enUS.md">English</a> ·
+  <a href="README.ko.md">한국어</a> ·
+  <a href="README.ja.md">日本語</a>
+</p> -->
 
 ## 개요
+<video src="assets/RayCasting_test.mp4" controls="true" width="600"></video>
 
-<video src="/doc/RayCasting_test.mp4" controls="true" width="600"></video>
+플레이어가 바라보는 방향으로 레이캐스팅을 실행하며, 블록과 부딪힌 정확한 좌표와 충돌면(의 법선축)을 검출한다.
 
 ## 사용방법
-RayCast용 툴을 사용하여 시각화할 수 있다.
+
+툴을 손에 들어서 실행할 수 있다.
 ```mcfunction
 function ray:get_tool
 ```
 
 ## 원리
+기존 Bresenham의 한계를 극복한 3D Supercover DDA 알고리즘 중 하나인 정수연산기반으로 개조된 Amanatides & Woo의 방식을 사용하였다.
 
-![](./doc/compare.jpg)
+<details>
+<summary>더보기</summary>
 
-기존 Bresenham의 한계를 극복한 3D Supercover DDA 알고리즘 중 하나인 정수연산기반 Amanatides & Woo의 방식을 사용하였다.
+![](assets/compare.jpg)
 
 ```
 # -- basic functions --
@@ -71,3 +81,7 @@ while collapsed == 0:
 
 endwhile
 ```
+</details>
+
+## Thanks to
+[Wonny._.0724](https://github.com/leehyowon14)
